@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/sha256.js"></script>
+    <script src="js/base64js.min.js"></script>
+    <script src="js/index.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <H1> Step1: Generate master password. </H1>
+      <form id="form1" onsubmit="void(nul);">
+        <div class="form-group">
+          <label for="seed"> Random seed for random pad (e.g. your birthday in `yyyymmdd` form). </label>
+          <input id="seed" type="text" class="form-control"/>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-xs-8">
+            <div class="well">
+              <table class="table">
+                <tr>
+                  <td width='10' id="pad-00">x</td>
+                  <td width='10' id="pad-01">x</td>
+                  <td width='10' id="pad-02">x</td>
+                  <td width='10' id="pad-03">x</td>
+                  <td width='10' id="pad-04">x</td>
+                  <td width='10' id="pad-05">x</td>
+                  <td width='10' id="pad-06">x</td>
+                </tr>
+                <tr>
+                  <td width='10' id="pad-10">x</td>
+                  <td width='10' id="pad-11">x</td>
+                  <td width='10' id="pad-12">x</td>
+                  <td width='10' id="pad-13">x</td>
+                  <td width='10' id="pad-14">x</td>
+                  <td width='10' id="pad-15">x</td>
+                  <td width='10' id="pad-16">x</td>
+                </tr>
+                <tr>
+                  <td width='10' id="pad-20">x</td>
+                  <td width='10' id="pad-21">x</td>
+                  <td width='10' id="pad-22">x</td>
+                  <td width='10' id="pad-23">x</td>
+                  <td width='10' id="pad-24">x</td>
+                  <td width='10' id="pad-25">x</td>
+                  <td width='10' id="pad-26">x</td>
+                </tr>
+                <tr>
+                  <td width='10' id="pad-30">x</td>
+                  <td width='10' id="pad-31">x</td>
+                  <td width='10' id="pad-32">x</td>
+                  <td width='10' id="pad-33">x</td>
+                  <td width='10' id="pad-34">x</td>
+                  <td width='10' id="pad-35">x</td>
+                  <td width='10' id="pad-36">x</td>
+                </tr>
+                <tr>
+                  <td width='10' id="pad-40">x</td>
+                  <td width='10' id="pad-41">x</td>
+                  <td width='10' id="pad-42">x</td>
+                  <td width='10' id="pad-43">x</td>
+                  <td width='10' id="pad-44">x</td>
+                  <td width='10' id="pad-45">x</td>
+                  <td width='10' id="pad-46">x</td>
+                </tr>
+                <tr>
+                  <td width='10' id="pad-50">x</td>
+                  <td width='10' id="pad-51">x</td>
+                  <td width='10' id="pad-52">x</td>
+                  <td width='10' id="pad-53">x</td>
+                  <td width='10' id="pad-54">x</td>
+                  <td width='10' id="pad-55">x</td>
+                  <td width='10' id="pad-56">x</td>
+                </tr>
+                <tr>
+                  <td width='10' id="pad-60">x</td>
+                  <td width='10' id="pad-61">x</td>
+                  <td width='10' id="pad-62">&nbsp;</td>
+                  <td width='10' id="pad-63">&nbsp;</td>
+                  <td width='10' id="pad-64">&nbsp;</td>
+                  <td width='10' id="pad-65">&nbsp;</td>
+                  <td width='10' id="pad-66">&nbsp;</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="form-group" id="master-pass-group">
+          <label for="master-pass"> Enter Master Password </label>
+          <input id="master-pass" type="password" class="form-control"/>
+          <p class="help-block" id="master-pass-error"></p>
+        </div>
+        <div class="form-group" id="master-pass-confirm-group">
+          <label for="master-pass-confirm"> Confirm Master Password </label>
+          <input id="master-pass-confirm" type="password" class="form-control"/>
+          <p class="help-block" id="master-pass-confirm-error"></p>
+        </div>
+      </form>
+      <hr>
+      <H1> Step2: Generate password for web site. </H1>
+      <form id="form2">
+        <div class="form-group">
+          <label for="fqdn"> FQDN </label>
+          <input id="fqdn" type="text" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="submit" value="Generate">
+        </div>
+        <hr/>
+        <div class="form-group">
+          <label for="pass"> Generated Password </label>
+          <input id="pass" type="text" class="form-control"/>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
